@@ -42,23 +42,46 @@
 
 })(jQuery); // End of use strict
 
-// Disable Google Maps scrolling
-// See http://stackoverflow.com/a/25904582/1607849
-// Disable scroll zooming and bind back the click event
-var onMapMouseleaveHandler = function(event) {
-  var that = $(this);
-  that.on('click', onMapClickHandler);
-  that.off('mouseleave', onMapMouseleaveHandler);
-  that.find('iframe').css("pointer-events", "none");
+// handling modals for competencies
+
+// get modals
+var profModal = document.getElementById("prof-modal");
+var onderzoekModal = document.getElementById("onderzoek-modal");
+var communicatiefModal = document.getElementById("communicatief-modal");
+var leerModal = document.getElementById("leer-modal");
+var ethiekModal = document.getElementById("ethiek-modal");
+var samenModal = document.getElementById("samen-modal");
+
+var modalArr = [profModal, onderzoekModal, communicatiefModal, leerModal, ethiekModal, samenModal];
+
+// close button
+var close = document.getElementsByClassName("close");
+
+// get buttons
+var prof = document.getElementById("professioneel-vakmanschap");
+var onderzoek = document.getElementById("onderzoekend-vermogen");
+var communicatief = document.getElementById("communicatief-vermogen");
+var leer = document.getElementById("leervermogen");
+var ethiek = document.getElementById("beroepsethiek");
+var samen = document.getElementById("samenwerken");
+
+var buttonsArr = [prof, onderzoek, communicatief, leer, ethiek, samen];
+
+// Let close button actually close modals
+for(let i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    for(let modal in modalArr) {
+      modal.style.display = "none";
+    }
+    for(let button in buttonsArr) {
+      button.style.display = "none";
+    }
+  }
 }
-var onMapClickHandler = function(event) {
-  var that = $(this);
-  // Disable the click handler until the user leaves the map area
-  that.off('click', onMapClickHandler);
-  // Enable scrolling zoom
-  that.find('iframe').css("pointer-events", "auto");
-  // Handle the mouse leave event
-  that.on('mouseleave', onMapMouseleaveHandler);
+
+// Let buttons show modal
+for(let button in buttonsArr) { 
+  button.onclick = function() {
+    button.style.display = "block";
+  }
 }
-// Enable map zooming with mouse scroll when the user clicks the map
-$('.map').on('click', onMapClickHandler);

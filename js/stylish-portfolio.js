@@ -45,43 +45,43 @@
 // handling modals for competencies
 
 // get modals
-var profModal = document.getElementById("prof-modal");
-var onderzoekModal = document.getElementById("onderzoek-modal");
-var communicatiefModal = document.getElementById("communicatief-modal");
-var leerModal = document.getElementById("leer-modal");
-var ethiekModal = document.getElementById("ethiek-modal");
-var samenModal = document.getElementById("samen-modal");
+// var profModal = document.getElementById("prof-modal");
+// var onderzoekModal = document.getElementById("onderzoek-modal");
+// var communicatiefModal = document.getElementById("communicatief-modal");
+// var leerModal = document.getElementById("leer-modal");
+// var ethiekModal = document.getElementById("ethiek-modal");
+// var samenModal = document.getElementById("samen-modal");
 
-var modalArr = [profModal, onderzoekModal, communicatiefModal, leerModal, ethiekModal, samenModal];
+// var modalArr = [profModal, onderzoekModal, communicatiefModal, leerModal, ethiekModal, samenModal];
 
-// close button
-var close = document.getElementsByClassName("close");
+// // close button
+// var close = document.getElementsByClassName("close");
 
-// get buttons
-var prof = document.getElementById("professioneel-vakmanschap");
-var onderzoek = document.getElementById("onderzoekend-vermogen");
-var communicatief = document.getElementById("communicatief-vermogen");
-var leer = document.getElementById("leervermogen");
-var ethiek = document.getElementById("beroepsethiek");
-var samen = document.getElementById("samenwerken");
+// // get buttons
+// var prof = document.getElementById("professioneel-vakmanschap");
+// var onderzoek = document.getElementById("onderzoekend-vermogen");
+// var communicatief = document.getElementById("communicatief-vermogen");
+// var leer = document.getElementById("leervermogen");
+// var ethiek = document.getElementById("beroepsethiek");
+// var samen = document.getElementById("samenwerken");
 
-var buttonsArr = [prof, onderzoek, communicatief, leer, ethiek, samen];
+// var buttonsArr = [prof, onderzoek, communicatief, leer, ethiek, samen];
 
-// Let close button actually close modals
-for(let i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    for(let modal in modalArr) {
-      modal.style.display = "none";
-    }
-    for(let button in buttonsArr) {
-      button.style.display = "none";
-    }
-  }
-}
+// // Let close button actually close modals
+// for(let i = 0; i < close.length; i++) {
+//   close[i].onclick = function() {
+//     for(let modal in modalArr) {
+//       modal.style.display = "none";
+//     }
+//     for(let button in buttonsArr) {
+//       button.style.display = "none";
+//     }
+//   }
+// }
 
-// Let buttons show modal
-for(let button in buttonsArr) { 
-  button.onclick = function() {
-    button.style.display = "block";
-  }
-}
+// // Let buttons show modal
+// for(let button in buttonsArr) { 
+//   button.onclick = function() {
+//     button.style.display = "block";
+//   }
+// }
